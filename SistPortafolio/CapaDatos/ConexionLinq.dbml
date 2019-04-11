@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbPortafolioDocentes" Class="ConexionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RBI8HGP\SQLEXPRESS;Initial Catalog=dbPortafolioDocentes;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="dbPortafolioDocentesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tDocente" Member="tDocente">
+    <Type Name="tDocente">
+      <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoPat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoMat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tDocente_tDetallePortafolio" Member="tDetallePortafolio" ThisKey="idDocente" OtherKey="idDocente" Type="tDetallePortafolio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPerfil" Member="tPerfil">
+    <Type Name="tPerfil">
+      <Column Name="idPerfil" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPrivilegios" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="tPerfil_tUsuario" Member="tUsuario" ThisKey="idPerfil" OtherKey="idPerfil" Type="tUsuario" />
+      <Association Name="tPrivilegios_tPerfil" Member="tPrivilegios" ThisKey="idPrivilegios" OtherKey="idPrivilegios" Type="tPrivilegios" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDetallePortafolio" Member="tDetallePortafolio">
+    <Type Name="tDetallePortafolio">
+      <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPortafolio" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tDocente_tDetallePortafolio" Member="tDocente" ThisKey="idDocente" OtherKey="idDocente" Type="tDocente" IsForeignKey="true" />
+      <Association Name="tPortafolio_tDetallePortafolio" Member="tPortafolio" ThisKey="idPortafolio" OtherKey="idPortafolio" Type="tPortafolio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPortafolio" Member="tPortafolio">
+    <Type Name="tPortafolio">
+      <Column Name="idPortafolio" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FilosofiaDocente" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Curriculum" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="MisionVision" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="ObjetivosEducacionales" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="PerfilDeIngresanteEP" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="PerfilEgresadoEP" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="PlanDeEstudiosEP" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="MallaCurricularEP" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="RelacionEstudiantesMAtriculados" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="RegistroAsistencia" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="AvanceDeSesionesPorClase" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="RegistroEntregaSilabo" Type="System.String" DbType="Char(500)" CanBeNull="true" />
+      <Column Name="SilaboUnsaac" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="SilaboIcacid" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="PresentacionPowerPoint" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="FichaLectura" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="EjerciciosPracticos" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="ActividadesInvestigacion" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="GuiasLaboratorio" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="TrabajoCampo" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Visitas" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="ActividadesProyeccionSocial" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="TextosEspecialidad" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Evauaciones" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="ProyectosIndividualesGrupales" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Anexos" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Association Name="tPortafolio_tDetallePortafolio" Member="tDetallePortafolio" ThisKey="idPortafolio" OtherKey="idPortafolio" Type="tDetallePortafolio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPrivilegios" Member="tPrivilegios">
+    <Type Name="tPrivilegios">
+      <Column Name="idPrivilegios" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Administrador" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioPrincipal" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioComun" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tPrivilegios_tPerfil" Member="tPerfil" ThisKey="idPrivilegios" OtherKey="idPrivilegios" Type="tPerfil" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tUsuario" Member="tUsuario">
+    <Type Name="tUsuario">
+      <Column Name="idUsuario" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPerfil" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoPat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoMat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Nick" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tPerfil_tUsuario" Member="tPerfil" ThisKey="idPerfil" OtherKey="idPerfil" Type="tPerfil" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spInsertar_Docente" Method="spInsertar_Docente">
+    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="nombres" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="apellidopat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidomat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizar_Docente" Method="spActualizar_Docente">
+    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="apellidopat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidomat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminar_Docente" Method="spEliminar_Docente">
+    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spBuscar_Docente" Method="spBuscar_Docente">
+    <Parameter Name="idDocente" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <ElementType Name="spBuscar_DocenteResult">
+      <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoPat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoMat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

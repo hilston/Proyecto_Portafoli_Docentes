@@ -8,6 +8,9 @@ namespace CapaDatos.Entidad
 {
     class Usuario
     {
+
+     //   private
+     
         private string aIdUsuario;
         private string aIdPerfil;
         private string aNombre;

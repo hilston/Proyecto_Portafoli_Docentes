@@ -26,3 +26,6 @@ C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPort
 C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.csprojResolveAssemblyReference.cache
 C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.Properties.Resources.resources
 C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.csproj.GenerateResource.Cache
+C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\SistPortafolio\bin\Debug\SistPortafolio.exe.config
+C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.exe
+C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.pdb

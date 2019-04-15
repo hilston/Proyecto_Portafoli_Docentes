@@ -44,5 +44,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["dbPortafolioDocentesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-V52J8R2;Initial Catalog=dbPortafolioDocentes;Integrated Secur" +
+            "ity=True")]
+        public string dbPortafolioDocentesConnectionString1 {
+            get {
+                return ((string)(this["dbPortafolioDocentesConnectionString1"]));
+            }
+        }
     }
 }

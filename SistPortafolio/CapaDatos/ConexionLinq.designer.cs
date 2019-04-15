@@ -30,15 +30,15 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
+    partial void InserttDetallePortafolio(tDetallePortafolio instance);
+    partial void UpdatetDetallePortafolio(tDetallePortafolio instance);
+    partial void DeletetDetallePortafolio(tDetallePortafolio instance);
     partial void InserttDocente(tDocente instance);
     partial void UpdatetDocente(tDocente instance);
     partial void DeletetDocente(tDocente instance);
     partial void InserttPerfil(tPerfil instance);
     partial void UpdatetPerfil(tPerfil instance);
     partial void DeletetPerfil(tPerfil instance);
-    partial void InserttDetallePortafolio(tDetallePortafolio instance);
-    partial void UpdatetDetallePortafolio(tDetallePortafolio instance);
-    partial void DeletetDetallePortafolio(tDetallePortafolio instance);
     partial void InserttPortafolio(tPortafolio instance);
     partial void UpdatetPortafolio(tPortafolio instance);
     partial void DeletetPortafolio(tPortafolio instance);
@@ -51,7 +51,7 @@ namespace CapaDatos
     #endregion
 		
 		public ConexionLinqDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.dbPortafolioDocentesConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.dbPortafolioDocentesConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -80,6 +80,14 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<tDetallePortafolio> tDetallePortafolio
+		{
+			get
+			{
+				return this.GetTable<tDetallePortafolio>();
+			}
+		}
+		
 		public System.Data.Linq.Table<tDocente> tDocente
 		{
 			get
@@ -93,14 +101,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<tPerfil>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tDetallePortafolio> tDetallePortafolio
-		{
-			get
-			{
-				return this.GetTable<tDetallePortafolio>();
 			}
 		}
 		
@@ -128,20 +128,20 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertar_Docente")]
-		public int spInsertar_Docente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string iddocente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombres, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidopat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidomat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string dni, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] ref string mjs)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iddocente, nombres, apellidopat, apellidomat, dni, telefono, direccion, mjs);
-			mjs = ((string)(result.GetParameterValue(7)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spActualizar_Docente")]
 		public int spActualizar_Docente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string iddocente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidopat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidomat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string dni, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] ref string mjs)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iddocente, nombre, apellidopat, apellidomat, dni, telefono, direccion, mjs);
 			mjs = ((string)(result.GetParameterValue(7)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spBuscar_Docente")]
+		public ISingleResult<spBuscar_DocenteResult> spBuscar_Docente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string idDocente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] ref string mjs)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDocente, mjs);
+			mjs = ((string)(result.GetParameterValue(1)));
+			return ((ISingleResult<spBuscar_DocenteResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spEliminar_Docente")]
@@ -152,12 +152,180 @@ namespace CapaDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spBuscar_Docente")]
-		public ISingleResult<spBuscar_DocenteResult> spBuscar_Docente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string idDocente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] ref string mjs)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertar_Docente")]
+		public int spInsertar_Docente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string iddocente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidopat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellidomat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(8)")] string dni, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string telefono, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] ref string mjs)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idDocente, mjs);
-			mjs = ((string)(result.GetParameterValue(1)));
-			return ((ISingleResult<spBuscar_DocenteResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iddocente, nombre, apellidopat, apellidomat, dni, telefono, direccion, mjs);
+			mjs = ((string)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tDetallePortafolio")]
+	public partial class tDetallePortafolio : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _idDocente;
+		
+		private string _idPortafolio;
+		
+		private EntityRef<tDocente> _tDocente;
+		
+		private EntityRef<tPortafolio> _tPortafolio;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidDocenteChanging(string value);
+    partial void OnidDocenteChanged();
+    partial void OnidPortafolioChanging(string value);
+    partial void OnidPortafolioChanged();
+    #endregion
+		
+		public tDetallePortafolio()
+		{
+			this._tDocente = default(EntityRef<tDocente>);
+			this._tPortafolio = default(EntityRef<tPortafolio>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDocente", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string idDocente
+		{
+			get
+			{
+				return this._idDocente;
+			}
+			set
+			{
+				if ((this._idDocente != value))
+				{
+					if (this._tDocente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidDocenteChanging(value);
+					this.SendPropertyChanging();
+					this._idDocente = value;
+					this.SendPropertyChanged("idDocente");
+					this.OnidDocenteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPortafolio", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string idPortafolio
+		{
+			get
+			{
+				return this._idPortafolio;
+			}
+			set
+			{
+				if ((this._idPortafolio != value))
+				{
+					if (this._tPortafolio.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidPortafolioChanging(value);
+					this.SendPropertyChanging();
+					this._idPortafolio = value;
+					this.SendPropertyChanged("idPortafolio");
+					this.OnidPortafolioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tDocente_tDetallePortafolio", Storage="_tDocente", ThisKey="idDocente", OtherKey="idDocente", IsForeignKey=true)]
+		public tDocente tDocente
+		{
+			get
+			{
+				return this._tDocente.Entity;
+			}
+			set
+			{
+				tDocente previousValue = this._tDocente.Entity;
+				if (((previousValue != value) 
+							|| (this._tDocente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tDocente.Entity = null;
+						previousValue.tDetallePortafolio.Remove(this);
+					}
+					this._tDocente.Entity = value;
+					if ((value != null))
+					{
+						value.tDetallePortafolio.Add(this);
+						this._idDocente = value.idDocente;
+					}
+					else
+					{
+						this._idDocente = default(string);
+					}
+					this.SendPropertyChanged("tDocente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tPortafolio_tDetallePortafolio", Storage="_tPortafolio", ThisKey="idPortafolio", OtherKey="idPortafolio", IsForeignKey=true)]
+		public tPortafolio tPortafolio
+		{
+			get
+			{
+				return this._tPortafolio.Entity;
+			}
+			set
+			{
+				tPortafolio previousValue = this._tPortafolio.Entity;
+				if (((previousValue != value) 
+							|| (this._tPortafolio.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tPortafolio.Entity = null;
+						previousValue.tDetallePortafolio.Remove(this);
+					}
+					this._tPortafolio.Entity = value;
+					if ((value != null))
+					{
+						value.tDetallePortafolio.Add(this);
+						this._idPortafolio = value.idPortafolio;
+					}
+					else
+					{
+						this._idPortafolio = default(string);
+					}
+					this.SendPropertyChanged("tPortafolio");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -571,174 +739,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.tPerfil = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tDetallePortafolio")]
-	public partial class tDetallePortafolio : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _idDocente;
-		
-		private string _idPortafolio;
-		
-		private EntityRef<tDocente> _tDocente;
-		
-		private EntityRef<tPortafolio> _tPortafolio;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidDocenteChanging(string value);
-    partial void OnidDocenteChanged();
-    partial void OnidPortafolioChanging(string value);
-    partial void OnidPortafolioChanged();
-    #endregion
-		
-		public tDetallePortafolio()
-		{
-			this._tDocente = default(EntityRef<tDocente>);
-			this._tPortafolio = default(EntityRef<tPortafolio>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDocente", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string idDocente
-		{
-			get
-			{
-				return this._idDocente;
-			}
-			set
-			{
-				if ((this._idDocente != value))
-				{
-					if (this._tDocente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidDocenteChanging(value);
-					this.SendPropertyChanging();
-					this._idDocente = value;
-					this.SendPropertyChanged("idDocente");
-					this.OnidDocenteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPortafolio", DbType="VarChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string idPortafolio
-		{
-			get
-			{
-				return this._idPortafolio;
-			}
-			set
-			{
-				if ((this._idPortafolio != value))
-				{
-					if (this._tPortafolio.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidPortafolioChanging(value);
-					this.SendPropertyChanging();
-					this._idPortafolio = value;
-					this.SendPropertyChanged("idPortafolio");
-					this.OnidPortafolioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tDocente_tDetallePortafolio", Storage="_tDocente", ThisKey="idDocente", OtherKey="idDocente", IsForeignKey=true)]
-		public tDocente tDocente
-		{
-			get
-			{
-				return this._tDocente.Entity;
-			}
-			set
-			{
-				tDocente previousValue = this._tDocente.Entity;
-				if (((previousValue != value) 
-							|| (this._tDocente.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tDocente.Entity = null;
-						previousValue.tDetallePortafolio.Remove(this);
-					}
-					this._tDocente.Entity = value;
-					if ((value != null))
-					{
-						value.tDetallePortafolio.Add(this);
-						this._idDocente = value.idDocente;
-					}
-					else
-					{
-						this._idDocente = default(string);
-					}
-					this.SendPropertyChanged("tDocente");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tPortafolio_tDetallePortafolio", Storage="_tPortafolio", ThisKey="idPortafolio", OtherKey="idPortafolio", IsForeignKey=true)]
-		public tPortafolio tPortafolio
-		{
-			get
-			{
-				return this._tPortafolio.Entity;
-			}
-			set
-			{
-				tPortafolio previousValue = this._tPortafolio.Entity;
-				if (((previousValue != value) 
-							|| (this._tPortafolio.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tPortafolio.Entity = null;
-						previousValue.tDetallePortafolio.Remove(this);
-					}
-					this._tPortafolio.Entity = value;
-					if ((value != null))
-					{
-						value.tDetallePortafolio.Add(this);
-						this._idPortafolio = value.idPortafolio;
-					}
-					else
-					{
-						this._idPortafolio = default(string);
-					}
-					this.SendPropertyChanged("tPortafolio");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	

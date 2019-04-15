@@ -12,3 +12,17 @@ C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\SistP
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\SistPortafolio\bin\Debug\CapaDatos.dll
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\SistPortafolio\bin\Debug\CapaNegocio.pdb
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\SistPortafolio\bin\Debug\CapaDatos.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\SistPortafolio.exe.config
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.exe
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\SistPortafolio.exe
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\SistPortafolio.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaPresentacion.dll
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaNegocio.dll
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaDatos.dll
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaPresentacion.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaNegocio.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\bin\Debug\CapaDatos.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.csprojResolveAssemblyReference.cache
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.Properties.Resources.resources
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\SistPortafolio\obj\Debug\SistPortafolio.csproj.GenerateResource.Cache

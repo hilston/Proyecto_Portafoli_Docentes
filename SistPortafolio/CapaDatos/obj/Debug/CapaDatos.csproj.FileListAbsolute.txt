@@ -4,3 +4,9 @@ C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaD
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaDatos\obj\Debug\CapaDatos.pdb

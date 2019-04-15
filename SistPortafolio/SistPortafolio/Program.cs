@@ -18,7 +18,7 @@ namespace SistPortafolio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_visualizar_documento());
+            Application.Run(new frm_mant_docente());
         }
     }
 }

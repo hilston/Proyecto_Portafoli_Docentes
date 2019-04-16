@@ -21,9 +21,9 @@ namespace CapaPresentacion
 
         private void frm_visualizar_documento_Load(object sender, EventArgs e)
         {
-            /*string ruta;
+            string ruta;
             string pdfPath = Path.Combine(Application.StartupPath, "D:\\TAREA1.pdf");
-            Process.Start(pdfPath);*/
+            Process.Start(pdfPath);
         }
     }
 }

@@ -84,7 +84,6 @@
             this.btn_Update.TabIndex = 32;
             this.btn_Update.Text = "Actualizar";
             this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Insert
             // 
@@ -94,7 +93,6 @@
             this.btn_Insert.TabIndex = 33;
             this.btn_Insert.Text = "Agregar";
             this.btn_Insert.UseVisualStyleBackColor = true;
-            this.btn_Insert.Click += new System.EventHandler(this.btn_Insert_Click);
             // 
             // btn_buscar
             // 

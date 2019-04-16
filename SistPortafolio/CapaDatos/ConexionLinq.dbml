@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbPortafolioDocentes" Class="ConexionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-V52J8R2;Initial Catalog=dbPortafolioDocentes;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="dbPortafolioDocentesConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.tDetallePortafolio" Member="tDetallePortafolio">
-    <Type Name="tDetallePortafolio">
-      <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="idPortafolio" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="tDocente_tDetallePortafolio" Member="tDocente" ThisKey="idDocente" OtherKey="idDocente" Type="tDocente" IsForeignKey="true" />
-      <Association Name="tPortafolio_tDetallePortafolio" Member="tPortafolio" ThisKey="idPortafolio" OtherKey="idPortafolio" Type="tPortafolio" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RBI8HGP\SQLEXPRESS;Initial Catalog=dbPortafolioDocentes;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="dbPortafolioDocentesConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tDocente" Member="tDocente">
     <Type Name="tDocente">
       <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -27,6 +19,14 @@
       <Column Name="Rol" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
       <Association Name="tPerfil_tUsuario" Member="tUsuario" ThisKey="idPerfil" OtherKey="idPerfil" Type="tUsuario" />
       <Association Name="tPrivilegios_tPerfil" Member="tPrivilegios" ThisKey="idPrivilegios" OtherKey="idPrivilegios" Type="tPrivilegios" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDetallePortafolio" Member="tDetallePortafolio">
+    <Type Name="tDetallePortafolio">
+      <Column Name="idDocente" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idPortafolio" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="tDocente_tDetallePortafolio" Member="tDocente" ThisKey="idDocente" OtherKey="idDocente" Type="tDocente" IsForeignKey="true" />
+      <Association Name="tPortafolio_tDetallePortafolio" Member="tPortafolio" ThisKey="idPortafolio" OtherKey="idPortafolio" Type="tPortafolio" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tPortafolio" Member="tPortafolio">
@@ -85,6 +85,17 @@
       <Association Name="tPerfil_tUsuario" Member="tPerfil" ThisKey="idPerfil" OtherKey="idPerfil" Type="tPerfil" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.spInsertar_Docente" Method="spInsertar_Docente">
+    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="nombres" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="apellidopat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidomat" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.spActualizar_Docente" Method="spActualizar_Docente">
     <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="nombre" Type="System.String" DbType="VarChar(30)" />
@@ -93,6 +104,11 @@
     <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
     <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminar_Docente" Method="spEliminar_Docente">
+    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
@@ -108,21 +124,5 @@
       <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.spEliminar_Docente" Method="spEliminar_Docente">
-    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
-    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.spInsertar_Docente" Method="spInsertar_Docente">
-    <Parameter Name="iddocente" Type="System.String" DbType="VarChar(8)" />
-    <Parameter Name="nombre" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="apellidopat" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="apellidomat" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="dni" Type="System.String" DbType="VarChar(8)" />
-    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
-    <Parameter Name="direccion" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="mjs" Type="System.String" DbType="VarChar(50)" Direction="InOut" />
-    <Return Type="System.Int32" />
   </Function>
 </Database>

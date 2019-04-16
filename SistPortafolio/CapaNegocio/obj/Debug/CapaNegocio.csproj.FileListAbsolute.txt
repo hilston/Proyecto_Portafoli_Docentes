@@ -5,17 +5,3 @@ C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaN
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Nelson Lopez\documents\visual studio 2015\Projects\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.pdb
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\hp\Documents\GitHub\Proyecto_Portafoli_Docentes\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.pdb
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\bin\Debug\CapaNegocio.dll
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\bin\Debug\CapaNegocio.pdb
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\bin\Debug\CapaDatos.dll
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\bin\Debug\CapaDatos.pdb
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.dll
-C:\Users\Nelson Lopez\Documents\Repos\SistPortafolio\CapaNegocio\obj\Debug\CapaNegocio.pdb

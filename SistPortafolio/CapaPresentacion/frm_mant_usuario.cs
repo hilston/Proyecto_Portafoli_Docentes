@@ -21,15 +21,5 @@ namespace CapaPresentacion
         {
 
         }
-
-        private void btn_Insert_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
